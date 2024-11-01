@@ -1,0 +1,14 @@
+If upgrading from version 0.9...
+
+
+Find in your theme's 'comments.php' file:
+
+<p><input type="text" name="author_twitter" id="author_twitter" value="" size="15" tabindex="4" />
+<label for="url"><small>Twitter Username</small></label></p>
+
+
+And replace with:
+
+
+<p><input type="text" name="author_twitter" id="author_twitter" value="<?php echo (isset($_COOKIE['author_twitter' . COOKIEHASH]) ? $_COOKIE['author_twitter' . COOKIEHASH] : '' );?>" size="15" tabindex="4" />
+<label for="url"><small>Twitter Username</small></label></p>
